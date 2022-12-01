@@ -8,4 +8,9 @@ class ExamPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def update?
+    # Only admin can update it
+    record.user == user
+  end
 end
