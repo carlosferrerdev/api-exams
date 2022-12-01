@@ -1,8 +1,4 @@
-json.extract! @exam, :id, :description
-json.comments @exam.comments do |comment|
-  json.extract! comment, :id, :description
-  json.user do
-    json.id comment.user.id
-    json.email comment.user.email
-  end
+json.extract! @exam, :id, :description, :exam_name, :area
+json.questions @exam.questions do |question|
+  json.extract! question, :id, :statement
 end
