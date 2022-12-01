@@ -3,6 +3,6 @@ class Exam < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   validates :exam_name, presence: true, uniqueness: true
-  validates :area, presence: true, uniqueness: true
-  validates :description, presence: true, uniqueness: true
+  validates :area, presence: true
+  validates :description, presence: true
 end

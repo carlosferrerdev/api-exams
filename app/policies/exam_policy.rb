@@ -13,4 +13,13 @@ class ExamPolicy < ApplicationPolicy
     # Only admin can update it
     record.user == user
   end
+
+  def create?
+    # Only admin can create it
+    update?
+  end
+
+  def destroy?
+    update?
+  end
 end

@@ -1,6 +1,6 @@
 class Api::V1::ExamsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: %i[index show]
-  before_action :set_exam, only: %i[show update]
+  before_action :set_exam, only: %i[show update destroy]
 
   def index
     @exams = policy_scope(Exam)
@@ -15,6 +15,22 @@ class Api::V1::ExamsController < Api::V1::BaseController
     else
       render_error
     end
+  end
+
+  def create
+    @exam = Exam.new(exam_params)
+    @exam.user = current_user
+    authorize @exam
+    if @exam.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    @exam.destroy
+    head :no_content
   end
 
   private
