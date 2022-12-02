@@ -35,9 +35,10 @@ Geralmente, isso é feito com o Hyper Text Tranfer Protocol (HTTP), que em portu
 </p>
 
 <h2>Modelagem do Banco de Dados</h2>
-![My Remote Image](https://res.cloudinary.com/dzznfliwu/image/upload/v1669997959/Fractal/drawSQL-export-2022-12-02_13_18_rmdea9.png)
+<hr>
+<img src="https://res.cloudinary.com/dzznfliwu/image/upload/v1669997959/Fractal/drawSQL-export-2022-12-02_13_18_rmdea9.png">
 
-<br> <a src="https://drawsql.app/teams/ruby-on-rails/diagrams/fractal-project">Link do Diagrama</a>
+<br> <a href="https://drawsql.app/teams/ruby-on-rails/diagrams/fractal-project">Link do Diagrama</a>
 
 
 <h2>Executando o projeto</h2>
@@ -76,7 +77,7 @@ Geralmente, isso é feito com o Hyper Text Tranfer Protocol (HTTP), que em portu
 
 <h3>Para acessar os endpoints da API:</h3>
 
-<p>Uma breve documentação da API: <a src="https://documenter.getpostman.com/view/16315917/2s8YzL5mQX">Postman Documentation</a></p>
+<p>Uma breve documentação da API: <a href="https://documenter.getpostman.com/view/16315917/2s8YzL5mQX">Postman Documentation</a></p>
 <br>
 
 <h3>Próximos passos e melhorias</h3>
