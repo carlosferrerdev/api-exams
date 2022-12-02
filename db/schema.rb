@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_185808) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_145219) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text "statement"
+    t.boolean "correct"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "exam_name"
+    t.string "area"
+    t.index ["user_id"], name: "index_exams_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "statement"
+    t.bigint "exam_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +49,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_185808) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "exams", "users"
+  add_foreign_key "questions", "exams"
 end

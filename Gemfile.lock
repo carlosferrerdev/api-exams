@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/OskarEichler/simple_token_authentication.git
+  revision: 31f5fab68ca3d5f7d62064a143b50c9841b27234
+  specs:
+    simple_token_authentication (1.18.0)
+      actionmailer (>= 3.2.6, < 8)
+      actionpack (>= 3.2.6, < 8)
+      active_model_serializers
+      activemodel-serializers-xml
+      devise (>= 3.2, < 6)
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 31fe25504771bd6cd425b585a4e0ed652fba4521
   specs:
@@ -54,11 +65,20 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.4)
       activesupport (= 7.0.4)
       globalid (>= 0.3.6)
     activemodel (7.0.4)
       activesupport (= 7.0.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (7.0.4)
       activemodel (= 7.0.4)
       activesupport (= 7.0.4)
@@ -92,6 +112,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -126,6 +148,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-renderer (0.2.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -267,6 +290,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   simple_form!
+  simple_token_authentication!
   sprockets-rails
   stimulus-rails
   turbo-rails
